@@ -2,9 +2,10 @@
   "name": "youtube-api",
   "author": "George Bockari <bit@creight.dev>",
   "priave": true,
+  "type": "module",
   "version": "0.0.0",
   "scripts": {
-    "dev": "ts-node src/main.ts"
+    "dev": "ts-node --esm src/main.ts"
   },
   "dependencies": {
     "@googleapis/youtube": "^8.0.2",
