@@ -1,14 +1,8 @@
-import 'dotenv/config'
-import { youtube } from '@googleapis/youtube'
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
 
-const client = await youtube({
-  version: 'v3',
-  auth: process.env.GOOGLE_YOUTUBE_API_KEY,
-})
-
-const response = await client.videos.list({
-  part: ['snippet'],
-  id: ['11jpa8e5jEQ'],
-})
-
-console.log(response)
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+  await app.listen(3000);
+}
+bootstrap();
